@@ -10,7 +10,13 @@ export default function Home() {
                     <Link to="/profile">프로필</Link>
                 </div>
             </header>
-            <div className="post-list">Post List</div>
+            <div className="post__list">
+                {[...Array(10)].map((e, index) => (
+                    <div key={index} className="post__box">
+                        게시글 {index}
+                    </div>
+                ))}
+            </div>
             <footer>
                 <div>Menu 1</div>
                 <div>Menu 2</div>
