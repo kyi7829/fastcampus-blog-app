@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 
 const ThemeContext = createContext({
-    theme: "light",
+    theme: "dark",
     toggleMode: () => {},
 });
 
@@ -10,7 +10,7 @@ interface ThemeProps {
 }
 
 export const ThemeContextProvider = ({ children } : ThemeProps) => {
-    const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "light");
+    const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "dark");
 
     const toggleMode = () => {
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
